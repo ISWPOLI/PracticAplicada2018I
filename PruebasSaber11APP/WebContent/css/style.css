@@ -1,0 +1,143 @@
+@CHARSET "ISO-8859-1";
+
+/*Mario Alzate - Ingeneo 2012*/
+html, body, div, img, a, p, h1, h2, h3, h4, * {
+	margin: 0px;
+	padding: 0px 0px 0px 0px;
+	/*border: none;*/
+}
+
+/*footer*/
+.footer {
+	text-align: center;
+	height: 3%;
+	background-color: #F0F0F0;
+	color: #667;
+	border-top: 1px #bbb solid; /*position:fixed;*/
+	width: 100%; /*bottom:0px;*/
+	font-size: 10px;
+}
+
+.right {
+    
+}
+
+.footer p {
+	padding: 3px;
+	text-align: center;
+    float: center;
+}
+
+.botton {
+	background-color: #f3f2f2;
+	margin-top: -150%;
+	width: 100%;
+	bottom: 0px;
+	position: fixed;
+}
+
+/* CSS para los paneles con bordes redondeados */
+*.rf-cp, *.rf-cp-hdr {
+	border-radius: 8px !important;
+	font-size: 11px !important;
+	font-family: Verdana, Calibri, Arial, sans-serif !important;
+}
+
+/* CSS para los botones */
+button, input[type="reset"], input[type="submit"], input[type="button"]
+	{
+	border-radius: 5px !important;
+	box-shadow: 1px 1px 2px #54A8BC !important;
+	padding: 3px 6px !important;
+	font-family: Verdana, Calibri, Arial, sans-serif !important;
+	font-size: 11px !important;
+	color: #FFFFFF !important;
+	background-color: #006DAC !important;
+	background-image: none !important;
+}
+
+.container {
+	background: #FFFFFF;
+	margin: 0 auto;
+	padding: 0;
+	text-align: left;
+}
+
+.content {
+	position: absolute;
+	left: 180px;
+	top: 250px;
+	width: 350px;
+	height: 350px;
+	z-index: 1;
+}
+
+/* .header { */
+/* 	position: relative; */
+/* 	width: 100%; */
+/* 	background: url('../imagenes/bg-header3.png') repeat-x 0 0; */
+/* 	height: 12% */
+/* } */
+
+.logo {
+	align: center;
+	margin: 0px 0px 0px 100px;
+	width: 1146px;
+	height: 217px;
+	display: block;
+	background: url('../imagenes/jbp-logo-white.png') no-repeat 0 0;
+	text-indent: -123456789px;
+	line-height: 0px;
+}
+
+/* .wrapper-tabs { */
+/* 	background-color: transparent; */
+/* 	height: 30px; */
+/* 	bottom: 0; */
+/* 	position: absolute; */
+/* 	left: 0; */
+/* 	width: 100% */
+/* } */
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0
+}
+
+* html .clearfix {
+	zoom: 1;
+} /* IE6 */
+*:first-child+html .clearfix {
+	zoom: 1;
+} /* IE7 */
+input.rounded, input.rf-sel-inp, *.rf-sel-btn-arrow, *.rf-cal-btn, *.rf-cal-inp
+	{
+	border: 1px solid #ccc !important;
+	border-radius: 5px !important;
+	box-shadow: 1px 1px 2px #54A8BC !important;
+	padding: 3px 6px !important;
+	font-family: Verdana, Calibri, Arial, sans-serif !important;
+	font-size: 12px !important;
+}
+
+*.rf-msg, *.rf-msgs, *.rf-msg-det, *.rf-msgs-det {
+	font-family: Verdana, Calibri, Arial, sans-serif !important;
+	font-size: 11px !important;
+}
+
+3.
+input.rounded:focus, input.rf-sel-inp:focus {
+	border-color: #0085AC !important;
+}
+
+*.rf-p {
+	border-style: none !important;
+}
+
+tr, th, td {
+	
+}

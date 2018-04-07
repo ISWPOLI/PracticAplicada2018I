@@ -9,36 +9,25 @@
 	<title>PruebasSaberAppWEB</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link type="text/css" rel="stylesheet"
-		href="/project/faces/javax.faces.resource/theme.css?ln=primefaces-glass-x" />
+		href="/project/faces/javax.faces.resource/theme.css?ln=primefaces-ui-darkness" />
 </h:head>
 <h:body>
 	<h:form id="login-form">
-		<p:growl autoUpdate="true" />
+		<p:growl id="growl" showDetail="true" sticky="true" />
 		<p:panel header="PRUEBAS SABER 11 APP">
-			<center>
-				<h:panelGrid columns="2" cellpadding="50">
+			<p:chart type="bar" model="#{chartView.barModel}"
+				style="height:300px" />
 
-					<p:growl id="growl" showDetail="true" sticky="true" />
-					<p:panel header="LOGIN">
-						<h:panelGrid columns="2" cellpadding="5">
+			<p:chart type="bar" model="#{chartView.horizontalBarModel}"
+				style="height:300px" />
+			<h:panelGrid columns="2" columnClasses="left,right"
+				style="width:100%">
+				<p:chart type="line" model="#{chartView2.animatedModel1}"
+					style="width:400px;" />
+				<p:chart type="bar" model="#{chartView2.animatedModel2}"
+					style="width:400px;" />
+			</h:panelGrid>
 
-							<h:outputLabel for="username" value="Usuario:"
-								requiredMessage="Por favor ingrese un usuario!" />
-							<h:inputText id="username" value="#{userBean.username}" />
-							<h:outputLabel for="password" value="Contraseña:" />
-							<h:inputSecret id="password" required="true"
-								value="#{userBean.password}"
-								requiredMessage="Por favor ingrese un usuario!" />
-							<f:facet name="footer">
-								<p:commandButton value="Login"
-									action="#{userBean.validarCredenciales()}"
-									actionListener="#{userBean.validarCredenciales}" update="growl">
-								</p:commandButton>
-							</f:facet>
-						</h:panelGrid>
-					</p:panel>
-				</h:panelGrid>
-			</center>
 			<div id="footer">
 				<p align="center">Republica de Colombia - Ministerio de
 					Educacion - Todos los Derechos reservados - 2018</p>
@@ -57,18 +46,5 @@
 		</p:panel>
 	</h:form>
 
-
-	<script type="text/javascript">
-		function handleLoginRequest(xhr, status, args) {
-			if (args.validationFailed || !args.loggedIn) {
-				PF('dlg').jq.effect("shake", {
-					times : 10
-				}, 100);
-			} else {
-				PF('dlg').hide();
-				$('#loginLink').fadeOut();
-			}
-		}
-	</script>
 </h:body>
 </html>

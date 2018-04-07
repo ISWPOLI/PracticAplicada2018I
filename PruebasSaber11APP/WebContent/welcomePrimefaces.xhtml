@@ -1,4 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
@@ -7,176 +8,95 @@
 
 <f:view contentType="text/html">
 	<h:head>
-		<f:facet name="first">
-			<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
-			<title>PrimeFaces</title>
-		</f:facet>		
+		<title>Login</title>
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script> 
+ 		Compiled and minified CSS 
+ 		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" /> 
+ 		Import jQuery before materialize.js 
+ 		<script type="text/javascript"
+			src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+
+ 		Compiled and minified JavaScript 
+ 		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
 	</h:head>
+	<h:body styleClass="cyan ligthen-5">
 
-	<h:body>
+		<div class="valign-wrapper" id="login-page">
+
+			<div class="container">
+
+				<div class="center-align">
+					<div class="row">
+						<div class="col s6 offset-s3">
+							<div class="card">
+								<div class="card-content">
+
+									<img class="responsive-img" style="max-width: 60px;"
+										src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAYFBMVEVJyv////85x/83x//5/f/W8f/4/f+o4/9ez//g9f9Xzf9Ny/8/yf9i0P9r0v+66f+Q3P/P7//l9v+E2P/x+/921f/G7P+d4P+46P+g4P/b8/+y5v/r+f9+1//Q8P+M2/8uGKcNAAANr0lEQVR4nO2daZfqqhKGIzhG4qxx6vb//8sTjWEeClJE91n9rnU/3X3SPBZUFVBAMfq/q/h0A7Lrj/Df1x/hv68/wn9ff4Q4mh4W29N5dtm0qmfn0+l6mA7yt3MTLk6zx6osKCWEKSKUsmW1v6yv47wtyEc4vt4eZUPGWOFWg0ppub9N8tkzD+F4e1kx6mVTOSmr6lMeygyEu9ux6ZJAOAmT0NVsgd8cbMLFpYTbzqSky3qC3CJUwvusTDCeCbnDbBQi4WnVG+8NSao1XrOwCA+XJUHBa0WK+oDUMhzCxZ7imE+I0SPOiMQg/F2h87WM1Rahdf0Jf7GGn0V03p+xL+HiSHPhtYyr60cJ7/jjz2T8uX+O8JKfr3iOx7pPct6D8LQcgu/FWJw+QHg4Ysa/kOgxuaumEp7Sk88kMXIblHA6qAFbkSoty0ki3A5swFaMJY3GFMJN3hDoFtknONV4wvv8EwZsxZbxE6towlO+HA0iGt1TYwnr4V2MKrLJS/gBH2ogHjMSHsqP9tC3WBkVNmIId4OlaX6xImZJLoJw8qkgYYr+5iD8IsAolwom3H4TYAwilPD0XYANInTBEUj4dYBwK8IIvxAQjAgi/ConIwTzqBDC3XcCNoiQuAggPHwaxC0GWNsAEH5FqubQMjxhDBMeIwFfe/TkJUpZ5tUAtupPGDddYqQ41uvJ7jAdj6eH+/VUHwv/Tn5PsUdfwnUEICPVzTL2d+sjyzfpoud+hAuwG2VkfnPOasanPNtTL8SAQ/UTjpdQPnoM7KDsHrmWPwLexk/4A2wU/QGsEB0eeeIq+0knPMOaRObAHbDdKgujfyj6CO8w/0Aj1tvPWboq8QV+H+Ec8nU2t3bQ8XRqHR6HKgMim6cRziAmpHv9P7s3MbBcNoG/WJbH+mT8vJsMkYPMUghBgYJqn77WpVyr90xvlrU2SoGjO0rU7enchBXkw8oYH99KW9RjtLwpPXabwYpVPOEZ0Ax1JWHmzs4Yucj/Ep5HgOXeXnQRTgEOgcgWDOx5qxvVV3wrMldC5SJ8hAnlMQjYMiU/Uv0o/sqdMwV3EAJ+ZCZ50Stk+sCYVMZ1Q0ckjvzUQbgKf7EU/xoyZp+ScwNoQgiWa6poJwSsrUl5xAVsD1qLvwFN6sEi9goxO2EZ/pzwMnVEh5MQJ+jeprSh2AnD016pS4BSHy4p+wA4szgR6zK4lTDcgUQOEesVKe9L40QQt5ZQwrDjYHyrGTj/kCQGMNRBwT9tM6KNEGBCHtriCzOkiUB4uEfKNhIthKcIExqDkIXXD8VQjFnmAola3KmFMDwt5B3toA1Cxo6beh+qaSc8wUKPGJYE3CQMpzOMV0No7pDO2t679S+Ti2xohu1OqbmeYhKGkw0eWu+qCaWCJf9HuCfW+0BvWValDMIDICPt/u1G4VC2Sbx7AcKIgOwwTsSYYhiE4Y7D/cxY+adE2bAc+43Y/Rhn9OzUWM8wCMODn3dSNZ5p4fbiNWLXjvhwGpIR9XVCQIrCumCodDF2UT/k31bl7QCt58WI6idtdMJ9uNt0HlkdsUTbVQ90087XbNC7qT4TLmLa1X6imx6omQHRN9W93Z3drB/BENPaoRECsgzWJX8bj6MJ/Vbcq+MvSukN0QgBG758N0v19Po4DDSdZ5D4CzbaGrVKCOikIuvW/m2ML5W+gp646d1UJYSMiu4Dej6iTl1Cv5WjJ2BIW81QCSHT7q5/Gd2QySvrq8CXuGNCX5GSZj4WQsgHumBhrrMwsZ4XHM/cH6CvZejjRSFcQFx3t0Jj2X2glzYrXIeLiR0eGUVU2e9SCEGTGQ/hsxpj/wBVXrBzPkJ2dhKCioMqD+Hz87AWcxtm6KXqFEomhMSKouiWWfqtd/JxiO9pGrkIr6Do243jfhWLpEuQ8aOFtl8qE95APyftLN6PsPMG+BFfGgI6IWBeUUiz6F5t44lHjvoTJSLKhLAm8/4VW7SoqPPI+FPgpyo74RT2c3JfHMg8/R+xT8GwRO2EQOfIu0Cf6m+eO6KvJ74kV/NJhNBVIT7x6dE40hVn5HCl6hxRIqyhZXqdq4F5Jpt4TAaOjOjvz6yEUM/Bp0np3ZTvL4xzFIGps2CJELoTJJKi5L0jaY8oz6niykYIqaBpRbtBlLx3JHvzLFZc2gjv8IJnnrunBn25mHCcw4rS4r4gjMikefuSz0OxuVTplsGKUmYqCCNirzhwFFqscEpGzOBupNVbQQjLu1vxSgx41xZq/45iRfSOKgVEQQgNh68P8J8ovnqLbVqTZbUiu1kIo5YThDOMnsGWo2lpIGJbUVqfFoRRGYq0OBp58Ou5jzq2IOJaUZo/CcK4yRDfYos8vNdutHMrCkJcK0o7UIIQUvUsfULc3XCP+c/etu+sWGayopS2CcLIvUqpxPsec9fCO1BZxiJm6JcMkEwoB9VpBY+l3dp/ZiuKysLUXtpoKVU1R5xSZB4r4iGK3F7yNLEfYXL+PIH3VB2xzBE0xBZbqi99fUWpO76AjzR1OziWjopmRRxCDfGwcZ2iZBo8yW9FG2HK8roSs5sW3+Ym5PNwqT6TNKwohjSSFcUEMTGn4U1daie3drPqdUv5W5SuLq8Yv1bzV89YxAkaNk+TuAlkuZ1id7rV+0ab2Vqs6mlWJG4rogQN4QUTM29JFHj51rBWtMXD5LVZtoTdaaQjesZib0Rr1hYzA9ZEf0C3b50CiIhWtGbefXYQGN1A7hd1dNQMiEycXBGEv732SBjdA65SCVkRLWhY5/h9K8yauDcLGlKzYrbQb12nAZQ/h8RoedlqQ/LweymlI2sRVuyDKFW0C0KcQzrPo82rfT27rde3Wf2zWjbhXzkuPMxYlEpqpH0LvHJd8ZpM9wclRM2KmUK/+KEkwix1H295ELMEDWnrRyLss2sdlIrIZCtzK87RxqK0iCETrnMSKsWZv+c11yqHu5HLeSVCWMFQshzXAO5zWNGxy92vBCgs+yUrr0kbthUdlQr4xwH1v2uzYjstJZ6gkXCbmqPapEflAfQPW6z4/qO4VnRUDPWZXQBlsWL3s/pCf6wVnVVfmV3NUyYi7ziI7kY5chFfX9pPBqIYGkxHTA79Shm0Umyap0BJ++ub+qlNV1EjDX40Kyql7PF13n31fv6wq1qS3RuSFdXDXQrhAAORt8JGaFgxbWdKPfmknrcYwoatOOHP+57Mp0wrJiFSZYqqEuacXqjihNct12QpshEbIjRoqEfWVUL0KwCcMs/rjtoSKz30x1tR+7RKiLCSAZSTUIT+zori/4dZUTuTr50/HCJevOQmFNchJY5F7ZigRpg/cXvLQ2i4G2lcjcNLLdJSqY0Q/ZIDZzs8hEbQkBDDIVu/EUs/y93riEGEvIQeK4YJ9RtcdMKhvCmz3ZEnylUNK3ZjMUho/HTGnQpDedNyxVV1/UoqyNWsyG8lDBJSfd3dIMxwWi4k7t7lkmPVigxMaNzaZhAOmJt2shKqQQNMqJ/Gt91PE1051FuckFAh1YpgQvO6L5NwuMytEycci9h+oIoVoYQWF225J2rwgWi5+qg9TCPcDQUSUvN9dgvhIPNgpVkuQmnbpgY1znbFp4UQfrQESW5CbsVpFz79hLbrhG030sXUtGPIQ2jkYF5C6+3sNsLBktO3fIQFU/9PL6H1RmjrzZAZbgHwyfa6gTi2p1rRR2i/YN9KeBiWkEzGXJ0vlA4mEtmKPkL7pd72G1qzbpaakjZMuz0V+eilbEUPoeOuZMc9wgNg2WUjlK3oITQvo/MRDp/YvGUlZMIXuQmtM043If49akBxwvlKVtXNidyE1gtoPYSfeoiMOtoTtKHzFTbnvfrZt0sdDU0kdD/85CQcPHdrlUpoTO3DhHp51kBKJPQ84eF5o2SoZTdFiYTu5y18hEOnpy+lEbr7qP8lnU/00yRC3zMz/veePtBPycSrq21SwDx9NECIfy98WMQv22/ufJ4kTPitD5CqMhcQIwhHs+9HJLUfIUA44L53ooKvWIYIs9w2hipz/TCS8P7dRgw/mBskHP1+81AEvOscJhzdPjUbDkt/9i2RMOItoIFFIAcDIYSjx3daMfA8Zwzhd8YM+chBb8LPzKT8AjznHEP4fYhQQDDhtyGCAeGEo/D7fwMKOAbjCEf770EkIC8aTRj5zHpGQQ/IRxNmeJYxSTFPLEcSZnkFNlqAXDSdcLSLuTApi1gBODPeg3A0XX3WjGQVmg/2JfywvwHl2n0JR6cs76NDxCKHYCrh6BBxtRemyBxyNQUG4YeW4Ogl3DA0wtFiPrQZWWmpuslI+Hy9csjRqD1dPgjh6L4arqvSVcoI7Es4Gq2LYczICvtB9/yEz+ec8zMyGli2z0o4OuwzMzK6B93QlI2wyVSPGRkZPVpr1QYlbCJHLsaGLzFCIBM2jDn6KuzmqbBQCJvxeClwUwBSXHqOv05IhI3WFZohGa0SUmyH8AibzropEBIdRosNSvd8C5Ow0Xav31UaiUfY3vJ6eB8hEzbabpYE+PiaRsdouYFdwRgjfMJGu9uK0SjKho4db71jn01ZCBuNF+f98662MCZ7XvG2P2MOPUW5CF86TG6PaknaO2kNsCcaXVab2yR2cSlKWQlbHRbbc/04ViXjR+9YWR0fl/V2gRTzfBqAUNb4/b8BNTDhB/RH+O/rj/Df1x/hv6//P+F/G9HG5lnor1oAAAAASUVORK5CYII=" />
+
+									<div class="left-align">
+										<h:form id="login-form">
+											<p:growl autoUpdate="true" />
+											<div class="row">
+												<div class="col s12 input-field">
+													<h:inputText id="username" required="true"
+														value="#{giris.username}"
+														requiredMessage="Kullanıcı Adı Zorunlu!" />
+													<h:outputLabel for="username" value="Kullanıcı Adı" />
+
+												</div>
+
+												<div class="col s12 input-field">
+													<h:inputSecret id="password" required="true"
+														value="#{giris.password}"
+														requiredMessage="Kullanıcı Şifre Zorunlu!" />
+													<h:outputLabel for="password" value="Kullanıcı Şifre" />
+
+												</div>
+
+												<div class="col s12 input-field">
+
+													<h:outputText id="login-mesaj" value="#{giris.mesaj}"
+														style="color:red" />
+													<br></br>
+
+													<h:commandLink styleClass="btn btn-large" value="Giris Yap"
+														action="#{giris.oturumac()}">
+														<f:ajax execute="login-form" render="login-mesaj" />
+													</h:commandLink>
 
 
-		<p>Text that will be formatted.</p>
-
-		<h3 style="margin-top: 0">Basic</h3>
-		<div class="ui-g">
-			<div class="ui-g-1">1</div>
-			<div class="ui-g-1">1</div>
-			<div class="ui-g-1">1</div>
-			<div class="ui-g-1">1</div>
-			<div class="ui-g-1">1</div>
-			<div class="ui-g-1">1</div>
-			<div class="ui-g-1">1</div>
-			<div class="ui-g-1">1</div>
-			<div class="ui-g-1">1</div>
-			<div class="ui-g-1">1</div>
-			<div class="ui-g-1">1</div>
-			<div class="ui-g-1">1</div>
-		</div>
-
-		<div class="ui-g">
-			<div class="ui-g-2">2</div>
-			<div class="ui-g-2">2</div>
-			<div class="ui-g-2">2</div>
-			<div class="ui-g-2">2</div>
-			<div class="ui-g-2">2</div>
-			<div class="ui-g-2">2</div>
-		</div>
+												</div>
 
 
-		<div class="ui-g">
-			<div class="ui-g-3">3</div>
-			<div class="ui-g-3">3</div>
-			<div class="ui-g-3">3</div>
-			<div class="ui-g-3">3</div>
-		</div>
 
+											</div>
 
-		<div class="ui-g">
-			<div class="ui-g-4">4</div>
-			<div class="ui-g-4">4</div>
-			<div class="ui-g-4">4</div>
-		</div>
+										</h:form>
 
-		<div class="ui-g">
-			<div class="ui-g-6">6</div>
-			<div class="ui-g-6">6</div>
-		</div>
+									</div>
+								</div>
 
-		<div class="ui-g">
-			<div class="ui-g-12">12</div>
-		</div>
+							</div>
+						</div>
 
-		<div class="ui-g">
-			<div class="ui-g-4">4</div>
-			<div class="ui-g-8">8</div>
-		</div>
-
-		<div class="ui-g">
-			<div class="ui-g-3">3</div>
-			<div class="ui-g-9">9</div>
-		</div>
-
-		<div class="ui-g">
-			<div class="ui-g-3">3</div>
-			<div class="ui-g-5">5</div>
-			<div class="ui-g-4">4</div>
-		</div>
-
-		<div class="ui-g">
-			<div class="ui-g-4">4</div>
-			<div class="ui-g-2">2</div>
-			<div class="ui-g-2">2</div>
-			<div class="ui-g-3">3</div>
-			<div class="ui-g-1">1</div>
-		</div>
-
-		<h3>Responsive</h3>
-		<div class="ui-g">
-			<div class="ui-g-12 ui-md-6 ui-lg-3">ui-g-12 ui-md-6 ui-lg-3</div>
-			<div class="ui-g-12 ui-md-6 ui-lg-3">ui-g-12 ui-md-6 ui-lg-3</div>
-			<div class="ui-g-12 ui-md-6 ui-lg-3">ui-g-12 ui-md-6 ui-lg-3</div>
-			<div class="ui-g-12 ui-md-6 ui-lg-3">ui-g-12 ui-md-6 ui-lg-3</div>
-		</div>
-
-		<div class="ui-g">
-			<div class="ui-g-12 ui-md-6 ui-lg-4">ui-g-12 ui-md-6 ui-lg-4</div>
-			<div class="ui-g-12 ui-md-6 ui-lg-4">ui-g-12 ui-md-6 ui-lg-4</div>
-			<div class="ui-g-12 ui-lg-4">ui-g-12 ui-lg-4</div>
-		</div>
-
-		<h3>Nested</h3>
-		<div class="ui-g">
-			<div class="ui-g-8 ui-g-nopad">
-				<div class="ui-g-6">6</div>
-				<div class="ui-g-6">6</div>
-				<div class="ui-g-12">12</div>
-			</div>
-			<div class="ui-g-4">4</div>
-		</div>
-
-		<h3>Sample Layout</h3>
-		<div class="ui-g">
-			<div class="ui-g-12 ui-md-2">M</div>
-			<div class="ui-g-12 ui-md-10 ui-g-nopad">
-				<div class="ui-g-12">Bar</div>
-				<div class="ui-g-12 ui-g-nopad">
-					<div class="ui-g">
-						<div class="ui-g-12 ui-md-4">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit. Sed imperdiet, orci nec dictum
-							convallis, ligula mauris vestibulum turpis, nec varius tortor
-							quam at diam. Nullam a viverra nibh. In tincidunt tempor lectus
-							quis vulputate. Pellentesque nec dui aliquam, lobortis est in,
-							lobortis ante</div>
-						<div class="ui-g-12 ui-md-4">Maecenas vel nisi aliquet,
-							vulputate tortor id, laoreet massa. Maecenas mattis tristique
-							bibendum. Suspendisse vel mi dictum, vestibulum lacus quis,
-							pulvinar quam. Proin vulputate, nibh at finibus varius, leo eros
-							lacinia elit, nec blandit odio tellus a justo. Donec nec ex
-							auctor, tristique nulla nec, rutrum sapien.</div>
-						<div class="ui-g-12 ui-md-4">Proin efficitur in leo eget
-							ornare. Nam vestibulum neque sed velit sagittis sodales. Sed
-							scelerisque hendrerit magna a hendrerit. Cras tempor sem at justo
-							pharetra convallis. Curabitur vel sodales purus. Vestibulum
-							interdum facilisis nulla imperdiet suscipit. Quisque lectus
-							felis, condimentum eget hendrerit sit amet.</div>
 					</div>
 
-					<div class="ui-g">
-						<div class="ui-g-6 ui-md-3">
-							<p:graphicImage name="demo/images/nature/nature1.jpg"
-								style="width:100%" />
-						</div>
-						<div class="ui-g-6 ui-md-3">
-							<p:graphicImage name="demo/images/nature/nature2.jpg"
-								style="width:100%" />
-						</div>
-						<div class="ui-g-6 ui-md-3">
-							<p:graphicImage name="demo/images/nature/nature3.jpg"
-								style="width:100%" />
-						</div>
-						<div class="ui-g-6 ui-md-3">
-							<p:graphicImage name="demo/images/nature/nature4.jpg"
-								style="width:100%" />
-						</div>
-					</div>
-
-					<div class="ui-g">
-						<div class="ui-g-12 ui-md-6">Phasellus faucibus purus
-							volutpat mauris lacinia sodales. Ut sit amet sapien facilisis,
-							commodo dui non, fringilla tellus. Quisque tempus facilisis nisi
-							sodales finibus. Pellentesque neque orci, ullamcorper vitae
-							ligula quis, dignissim euismod augue.</div>
-						<div class="ui-g-12 ui-md-6">Fusce ullamcorper congue massa,
-							eget ullamcorper nunc lobortis egestas. Lorem ipsum dolor sit
-							amet, consectetur adipiscing elit. Quisque ultrices dui eget
-							dolor feugiat dapibus. Aliquam pretium leo et egestas luctus.
-							Nunc facilisis gravida tellus.</div>
-					</div>
 				</div>
 			</div>
-			<div class="ui-g-12">Footer</div>
 		</div>
+		<script> 
+            $(document).on("ready", function () {
+               $('login-page').css({'height': window.innerHeight + 'px'});
+            });
+         </script>
+
 
 	</h:body>
 

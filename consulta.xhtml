@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>PruebasSaberAppWEB</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link type="text/css" rel="stylesheet"
+		href="/project/faces/javax.faces.resource/theme.css?ln=primefaces-glass-x" />
+</h:head>
+<h:body>
+	<h:form id="login-form">
+		<p:growl autoUpdate="true" />
+		<p:panel header="PRUEBAS SABER 11 APP">
+			<center>
+				<h:panelGrid columns="2" cellpadding="50">
+
+					<p:growl id="growl" showDetail="true" sticky="true" />
+					<p:panel header="CONSULTA PRUEBAS SABER 11 APP">
+						<h:panelGrid columns="3" cellpadding="5">
+
+							<h:outputLabel for="username" value="Consulta por Departamento"
+								requiredMessage="Por favor ingrese un usuario!" />
+							<h:inputText id="username" value="#{userBean.username}" />
+							<p:commandButton value="Consultar por Depto"
+								action="#{userBean.validarCredenciales()}"
+								actionListener="#{userBean.validarCredenciales}" update="growl">
+							</p:commandButton>
+							<h:outputLabel for="usernam" value="Consulta por Municipio"
+								requiredMessage="Por favor ingrese un usuario!" />
+							<h:inputText id="usernam" value="#{userBean.username}" />
+							<p:commandButton value="Consultar por municipio"
+								action="#{userBean.validarCredenciales()}"
+								actionListener="#{userBean.validarCredenciales}" update="growl">
+							</p:commandButton>
+						</h:panelGrid>
+					</p:panel>
+				</h:panelGrid>
+			</center>
+			<div id="footer">
+				<p align="center">Republica de Colombia - Ministerio de
+					Educacion - Todos los Derechos reservados - 2018</p>
+				<p align="center">Aplicacion Web hecha en xhtml, JSF, PrimeFaces
+					desplegado en servidor Apache Tomcat la cual consume servicio web
+					basado en protocolo SOAP, servicio que sirve de intermediario para
+					las operaciones a realizar en base de datos, hecha para la materia
+					Practica Aplicada</p>
+				<p align="center">Para mas informacion:</p>
+				<p align="center">
+					<a href="https://www.mineducacion.gov.co/portal/">https://www.mineducacion.gov.co/portal/</a>
+				</p>
+				<p align="center">Politecnico Grancolombiano</p>
+				<p align="center">2018</p>
+			</div>
+		</p:panel>
+	</h:form>
+
+
+	<script type="text/javascript">
+		function handleLoginRequest(xhr, status, args) {
+			if (args.validationFailed || !args.loggedIn) {
+				PF('dlg').jq.effect("shake", {
+					times : 10
+				}, 100);
+			} else {
+				PF('dlg').hide();
+				$('#loginLink').fadeOut();
+			}
+		}
+	</script>
+</h:body>
+</html>

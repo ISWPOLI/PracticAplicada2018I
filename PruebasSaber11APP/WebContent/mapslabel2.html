@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geocoding service</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+<style>
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+#map {
+	height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#floating-panel {
+	position: absolute;
+	top: 10px;
+	left: 25%;
+	z-index: 5;
+	background-color: #fff;
+	padding: 5px;
+	border: 1px solid #999;
+	text-align: center;
+	font-family: 'Roboto', 'sans-serif';
+	line-height: 30px;
+	padding-left: 10px;
+}
+</style>
+</head>
+<body>
+	<div id="floating-panel">
+		<input id="address" type="textbox" value="Bogota, Colombia"> <input
+			id="submit" type="button" value="Buscar">
+	</div>
+	<div id="map"></div>
+	<script>
+		function initMap() {
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom : 8,
+				center : {
+					lat : 4.7109886,
+					lng : -74.072092
+				}
+			});
+			var geocoder = new google.maps.Geocoder();
+
+			document.getElementById('submit').addEventListener('click',
+					function() {
+						geocodeAddress(geocoder, map);
+					});
+		}
+
+		function geocodeAddress(geocoder, resultsMap) {
+
+			var contentString = '<div id="content">'
+					+ '<div id="siteNotice">'
+					+ '</div>'
+					+ '<h1 id="firstHeading" class="firstHeading">Practica Aplicada 2018 I</h1>'
+					+ '<div id="bodyContent">'
+					+ '<p><b>Bogota</b>, resultados pruebas Saber 11 <b>Icfes</b>,Matematicas 50,Fisica 40, Lenguaje 60,'
+					+ 'Ingles 55.</p>'
+					+ '<p>Icfes Colombia 2018<a href="https://www.icfesinteractivo.gov.co/"></a></p>'
+					+ '</div>' + '</div>';
+
+			var infowindow = new google.maps.InfoWindow({
+				content : contentString,
+				maxWidth : 200
+			});
+
+			var address = document.getElementById('address').value;
+			geocoder
+					.geocode(
+							{
+								'address' : address
+							},
+							function(results, status) {
+								if (status === 'OK') {
+									resultsMap
+											.setCenter(results[0].geometry.location);
+									var marker = new google.maps.Marker({
+										map : resultsMap,
+										position : results[0].geometry.location
+									});
+									marker.addListener('click', function() {
+										infowindow.open(map, marker);
+									});
+								} else {
+									alert('Geocode was not successful for the following reason: '
+											+ status);
+								}
+							});
+		}
+	</script>
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWzTxPwhuCS9M4s--zuQaBBNTZKBBaMOY&libraries=places&callback=initMap">
+		
+	</script>
+</body>
+</html>

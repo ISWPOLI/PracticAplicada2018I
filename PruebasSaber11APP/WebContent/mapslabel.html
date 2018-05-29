@@ -82,10 +82,7 @@ html, body {
 
 		function initMap() {
 			var map = new google.maps.Map(document.getElementById('map'), {
-				center : {
-					lat : -5.31987835340327,
-					lng : -52.8212431459598
-				},
+				center: new google.maps.LatLng(4.7109886, -74.072092),
 				zoom : 13
 			});
 			var input = /** @type {!HTMLInputElement} */
@@ -171,13 +168,6 @@ html, body {
 			setupClickListener('changetype-geocode', [ 'geocode' ]);
 		}
 	</script>
-	<script type="text/javascript">
-      (function() {
-        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js?onload=onLoadCallback';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-      })();
-    </script>
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWzTxPwhuCS9M4s--zuQaBBNTZKBBaMOY&libraries=places&callback=initMap"
 		async defer></script>

@@ -29,17 +29,10 @@
 							requiredMessage="Por favor ingrese un usuario!" />
 						<f:facet name="footer" columns="2">
 							<p:commandButton value="Ingresar"
-								action="#{userBean.validarCredenciales()}"
-								actionListener="#{userBean.validarCredenciales}" update="growl">
+								action="#{userBean.validarCredencialesAdmin()}"
+								actionListener="#{userBean.validarCredencialesAdmin}" update="growl">
 							</p:commandButton>
 						</f:facet>
-					</h:panelGrid>
-					<h:panelGrid columns="2" cellpadding="5">
-						<h:outputLabel value="¿No tiene una cuenta?" />
-						<p:commandButton value="Cree una"
-							action="#{userBean.crearCuenta()}"
-							actionListener="#{userBean.crearCuenta}">
-						</p:commandButton>
 					</h:panelGrid>
 				</p:panel>
 			</h:panelGrid>
@@ -51,7 +44,6 @@
 				</center>
 			</h:panelGrid>
 		</center>
-		<p:growl id="growl1" showDetail="true" sticky="true" />
 		<center>
 			<h:panelGrid columns="2" cellpadding="5">
 				<p:commandButton value="Ingresar como administrador"
@@ -59,6 +51,9 @@
 					actionListener="#{userBean.ingresarAdmin}">
 				</p:commandButton>
 			</h:panelGrid>
+		</center>
+		<p:growl id="growl1" showDetail="true" sticky="true" />
+		<center>
 		</center>
 		<div id="footer">
 			<p align="center">Republica de Colombia - Ministerio de
